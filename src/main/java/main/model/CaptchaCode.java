@@ -5,10 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "captcha_codes")
-public class CaptchaCode {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class CaptchaCode extends BaseEntity{
 
     @Column(nullable = false)
     private Date time;

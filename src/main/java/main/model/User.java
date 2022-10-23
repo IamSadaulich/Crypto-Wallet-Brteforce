@@ -5,11 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
-    private int id;
-
+public class User extends BaseEntity{
     @Column(name = "is_moderator", columnDefinition = "TINYINT", nullable = false)
     private boolean isModerator;
 

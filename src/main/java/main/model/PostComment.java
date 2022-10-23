@@ -5,11 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "post_comments")
-public class PostComment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+public class PostComment extends BaseEntity {
     @ManyToOne(cascade = CascadeType.ALL)
     private PostComment parent;
 

@@ -4,19 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "global_settings")
-public class GlobalSetting {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(insertable = false, updatable = false)
+public class GlobalSetting extends BaseEntity{
+    @Column(insertable = false, updatable = false, nullable = false)
     @Enumerated(EnumType.STRING)
     private GlobalSettingCode code;
 
-    @Column(insertable = false, updatable = false)
+    @Column(insertable = false, updatable = false, nullable = false)
     private String name;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private GlobalSettingValue value;
 }
 

@@ -5,15 +5,11 @@ import java.util.*;
 
 @Entity
 @Table(name = "posts")
-public class Post {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+public class Post extends BaseEntity{
     @Column(name = "is_active", columnDefinition = "TINYINT", nullable = false)
     private boolean isActive;
 
-    @Column(name = "moderation_status", nullable = false)
+    @Column(name = "moderation_status", nullable = false, columnDefinition = "enum")
     @Enumerated(EnumType.STRING)
     private ModerationStatus moderationStatus;
 
