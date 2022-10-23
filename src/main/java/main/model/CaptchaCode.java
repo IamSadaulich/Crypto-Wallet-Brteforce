@@ -5,8 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "captcha_codes")
-public class CaptchaCode extends BaseEntity{
-
+public class CaptchaCode extends BaseEntity {
     @Column(nullable = false)
     private Date time;
 
@@ -15,6 +14,4 @@ public class CaptchaCode extends BaseEntity{
 
     @Column(name = "secret_code", nullable = false, columnDefinition = "TINYTEXT")
     private String secretCode;
-
-
 }

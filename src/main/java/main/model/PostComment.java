@@ -18,6 +18,6 @@ public class PostComment extends BaseEntity {
     @Column(nullable = false)
     private Date time;
 
-    @Column(columnDefinition = "TEXT",nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String text;
 }

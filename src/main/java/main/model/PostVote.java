@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "post_votes")
-public class PostVote extends BaseEntity{
+public class PostVote extends BaseEntity {
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     private User user;
 

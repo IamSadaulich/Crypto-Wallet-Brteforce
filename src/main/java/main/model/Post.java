@@ -5,7 +5,7 @@ import java.util.*;
 
 @Entity
 @Table(name = "posts")
-public class Post extends BaseEntity{
+public class Post extends BaseEntity {
     @Column(name = "is_active", columnDefinition = "TINYINT", nullable = false)
     private boolean isActive;
 
@@ -33,7 +33,7 @@ public class Post extends BaseEntity{
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "tag2post",
-    joinColumns = {@JoinColumn(name = "post_id")},
-    inverseJoinColumns = {@JoinColumn(name = "tag_id")})
+            joinColumns = {@JoinColumn(name = "post_id")},
+            inverseJoinColumns = {@JoinColumn(name = "tag_id")})
     private List<Tag> tags = new ArrayList<>();
 }
