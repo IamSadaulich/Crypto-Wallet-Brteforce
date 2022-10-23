@@ -1,0 +1,1 @@
+.MainPage{display:grid;grid-template-columns:7fr 3fr;grid-template-rows:repeat(auto-fit,100%);-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}@media(max-width:768px){.MainPage{grid-template-columns:1fr}}@media(max-width:768px){.MainPage-Tags{display:none}}.MainPage.Wrapper{margin-bottom:0}
