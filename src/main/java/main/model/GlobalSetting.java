@@ -43,5 +43,13 @@ public class GlobalSetting {
     public void setValue(GlobalSettingValue value) {
         this.value = value;
     }
+
+    public void setCode(GlobalSettingCode code) {
+        this.code = code;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
