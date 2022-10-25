@@ -5,7 +5,11 @@ import java.util.*;
 
 @Entity
 @Table(name = "posts")
-public class Post extends BaseEntity {
+public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     @Column(name = "is_active", columnDefinition = "TINYINT", nullable = false)
     private boolean isActive;
 
@@ -13,10 +17,9 @@ public class Post extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private ModerationStatus moderationStatus;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private User moderator;
+    private int moderator_id;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.LAZY)
     private User user;
 
     @Column(nullable = false)
@@ -36,4 +39,10 @@ public class Post extends BaseEntity {
             joinColumns = {@JoinColumn(name = "post_id")},
             inverseJoinColumns = {@JoinColumn(name = "tag_id")})
     private List<Tag> tags = new ArrayList<>();
+
+    @OneToMany(mappedBy = "post")
+    private Set<PostVote> postVotes;
+
+    @OneToMany(mappedBy = "post")
+    private Set<PostComment> postComments;
 }

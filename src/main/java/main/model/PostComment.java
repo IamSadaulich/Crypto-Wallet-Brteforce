@@ -5,14 +5,18 @@ import java.util.Date;
 
 @Entity
 @Table(name = "post_comments")
-public class PostComment extends BaseEntity {
-    @ManyToOne(cascade = CascadeType.ALL)
-    private PostComment parent;
+public class PostComment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @Column(name = "parent_id")
+    private int parentId;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.LAZY)
     private Post post;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.LAZY)
     private User user;
 
     @Column(nullable = false)

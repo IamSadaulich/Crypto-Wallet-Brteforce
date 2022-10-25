@@ -5,6 +5,7 @@
 ### Java ###
 # Compiled class file
 *.class
+CMSEngine.iml
 
 # Log file
 *.log
